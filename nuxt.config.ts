@@ -39,6 +39,8 @@ const nuxtConfig: Configuration = {
     ],
   },
 
+  serverMiddleware: ['~/api/modelsAPI.js'],
+
   srcDir: 'app/',
 
   /*
@@ -136,7 +138,9 @@ const nuxtConfig: Configuration = {
         ignoreNotFoundWarnings: true,
       },
     ],
-    '@nuxtjs/eslint-module',
+    ['@nuxtjs/eslint-module', {
+      fix: true
+    }],
     '@nuxtjs/tailwindcss',
   ],
 
@@ -183,6 +187,16 @@ const nuxtConfig: Configuration = {
     // Extend webpack config
     extend(config, { isDev }): void {
       config.devtool = isDev ? 'eval-source-map' : false;
+
+      config?.module?.rules.push({
+        enforce: "pre",
+        test: /\.(js|vue)$/,
+        loader: "eslint-loader",
+        exclude: /(node_modules)/,
+        options: {
+          fix: true
+        }
+      })
     },
   },
 };

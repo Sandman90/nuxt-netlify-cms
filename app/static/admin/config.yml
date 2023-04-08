@@ -67,3 +67,17 @@ collections:
       - { label: 'Featured Image', name: featuredImage, widget: image, required: false }
       - { label: 'SEO Description', name: seoDescription, widget: text, required: false }
       - { label: 'SEO Meta Image', name: seoMetaImage, widget: image, required: false }
+  - name: 'header'
+    label: 'Header'
+    folder: 'app/content/header'
+    create: true
+    slug: '{{slug}}'
+    format: 'json'
+    sort: 'published_at:desc'
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Content, name: content, widget: markdown }
+      - { label: Categories, name: categories, widget: categories, separator: '__' }
+      - { label: 'Featured Image', name: featuredImage, widget: image, required: false }
+      - { label: 'SEO Description', name: seoDescription, widget: text, required: false }
+      - { label: 'SEO Meta Image', name: seoMetaImage, widget: image, required: false }

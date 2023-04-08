@@ -9,6 +9,7 @@
     "build": "nuxt-ts build",
     "start": " nuxt-ts start",
     "generate": "nuxt-ts generate",
+    "lint": "eslint .",
     "test:lint": "eslint --ext .js,.ts,.vue --ignore-path .gitignore app/",
     "test:unit": "cross-env BABEL_ENV=test jest --coverage",
     "test": "npm run test:lint"
