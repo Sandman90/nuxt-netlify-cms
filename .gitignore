@@ -10,6 +10,9 @@ npm-debug.log
 # Nuxt generate
 dist
 
+# Idea configuration
+.idea
+
 # Ignore generated service workers
 app/static/sw.js
 app/static/workbox-sw.prod*
